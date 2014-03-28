@@ -1,0 +1,7 @@
+pod "CallingPidgeon", :path => "../CallingPidgeon.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
