@@ -1,6 +1,9 @@
-desc "Runs the specs [EMPTY]"
+desc "Alias for `spec`"
+task :test => :spec
+
+desc "Runs the specs CallingPidgeonTests"
 task :spec do
-  # Provide your own implementation
+  system ("xcodebuild test -workspace Tests/CallingPidgeonTests.xcworkspace -scheme CallingPidgeonTests -configuration Debug -sdk iphonesimulator | xcpretty -c -t")
 end
 
 task :version do

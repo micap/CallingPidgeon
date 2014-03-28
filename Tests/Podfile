@@ -1,0 +1,6 @@
+platform :ios, 7.0
+
+xcodeproj 'CallingPidgeonTests/CallingPidgeonTests.xcodeproj'
+
+pod 'CallingPidgeon', :path => '..'
+pod 'Kiwi/XCTest'

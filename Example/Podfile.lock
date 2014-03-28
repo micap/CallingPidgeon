@@ -1,0 +1,14 @@
+PODS:
+  - CallingPidgeon (0.1.0)
+
+DEPENDENCIES:
+  - CallingPidgeon (from `../CallingPidgeon.podspec`)
+
+EXTERNAL SOURCES:
+  CallingPidgeon:
+    :path: ../CallingPidgeon.podspec
+
+SPEC CHECKSUMS:
+  CallingPidgeon: 75d7ce774995519cfb1a8823f6193ffabdcf1787
+
+COCOAPODS: 0.29.0

@@ -1,7 +1,11 @@
+platform :ios
+
+xcodeproj 'CPDemoApp/CPDemoApp.xcodeproj'
+
 pod "CallingPidgeon", :path => "../CallingPidgeon.podspec"
 
-target "Demo" do
-end
+# target "Demo" do
+# end
 
-target "DemoTests" do
-end
+# target "DemoTests" do
+# end
