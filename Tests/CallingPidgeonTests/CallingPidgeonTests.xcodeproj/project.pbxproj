@@ -10,6 +10,7 @@
 		99D59A2D5AD542F6BBCE7CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE69098A2C764122AEF0A5D3 /* libPods.a */; };
 		F509077818E5A8E200E229F4 /* CPCountryCallingCodesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F52B9F3C18E59AA800970448 /* CPCountryCallingCodesSpec.m */; };
 		F509077F18E7C38400E229F4 /* CPCountryPickerViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F509077E18E7C38400E229F4 /* CPCountryPickerViewControllerSpec.m */; };
+		F509078518E7D1E200E229F4 /* CPChunkListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F509078418E7D1E200E229F4 /* CPChunkListSpec.m */; };
 		F55A4F5018E594950092EB6A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55A4F4F18E594950092EB6A /* XCTest.framework */; };
 		F55A4F5218E594950092EB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55A4F5118E594950092EB6A /* Foundation.framework */; };
 		F55A4F5418E594950092EB6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55A4F5318E594950092EB6A /* UIKit.framework */; };
@@ -20,6 +21,7 @@
 		D0442BFA5B064328898CE586 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EE69098A2C764122AEF0A5D3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F509077E18E7C38400E229F4 /* CPCountryPickerViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCountryPickerViewControllerSpec.m; sourceTree = "<group>"; };
+		F509078418E7D1E200E229F4 /* CPChunkListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPChunkListSpec.m; sourceTree = "<group>"; };
 		F52B9F3C18E59AA800970448 /* CPCountryCallingCodesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCountryCallingCodesSpec.m; sourceTree = "<group>"; };
 		F55A4F4C18E594950092EB6A /* CallingPidgeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallingPidgeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55A4F4F18E594950092EB6A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,6 +81,7 @@
 			children = (
 				F52B9F3C18E59AA800970448 /* CPCountryCallingCodesSpec.m */,
 				F509077E18E7C38400E229F4 /* CPCountryPickerViewControllerSpec.m */,
+				F509078418E7D1E200E229F4 /* CPChunkListSpec.m */,
 				F55A4F5618E594950092EB6A /* Supporting Files */,
 			);
 			path = CallingPidgeonTests;
@@ -192,6 +195,7 @@
 			files = (
 				F509077818E5A8E200E229F4 /* CPCountryCallingCodesSpec.m in Sources */,
 				F509077F18E7C38400E229F4 /* CPCountryPickerViewControllerSpec.m in Sources */,
+				F509078518E7D1E200E229F4 /* CPChunkListSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
