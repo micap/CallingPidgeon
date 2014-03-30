@@ -13,9 +13,21 @@
 {
     NSMutableArray *countryCallingCodeList = [NSMutableArray array];
     
-    for (NSUInteger i = 0; i < 239; i++) {
-        [countryCallingCodeList addObject:@"foo"];
+    for (NSString *item in [CPCountryCallingCodes countryCallingCodesDict]) {
+        [countryCallingCodeList addObject:[NSString stringWithFormat:@"%@ +%@", item, [CPCountryCallingCodes countryCallingCodesDict][item]]];
     }
-    return countryCallingCodeList;
+    NSArray *sorted = [countryCallingCodeList sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
+    
+    return sorted;
+}
+
++ (NSDictionary *)countryCallingCodesDict
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *filePath = [mainBundle pathForResource:@"countries" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    return dictionary;
 }
 @end

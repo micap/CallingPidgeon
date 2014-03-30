@@ -16,4 +16,8 @@
  *  @return the list of countries with their calling codes, sorted alphabetically in ascending order.
  */
 + (NSArray *)countryCallingCodes;
+/**
+ *  @return the dictionary of countries with their calling codes
+ */
++ (NSDictionary *)countryCallingCodesDict;
 @end
