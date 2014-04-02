@@ -2,7 +2,7 @@ platform :ios
 
 xcodeproj 'CPDemoApp/CPDemoApp.xcodeproj'
 
-pod "CallingPidgeon", :path => "../CallingPidgeon.podspec"
+pod 'CallingPidgeon', :path => '..'
 
 # target "Demo" do
 # end

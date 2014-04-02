@@ -7,6 +7,7 @@
 //
 
 #import "CPViewController.h"
+#import <CallingPidgeon/CPCountryPickerViewController.h>
 
 @interface CPViewController ()
 
@@ -26,4 +27,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonTapped:(id)sender
+{
+    CPCountryPickerViewController *countryPickerViewController = [CPCountryPickerViewController new];
+    [self.navigationController pushViewController:countryPickerViewController animated:YES];
+}
 @end

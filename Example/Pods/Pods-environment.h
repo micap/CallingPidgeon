@@ -9,6 +9,6 @@
 // CallingPidgeon
 #define COCOAPODS_POD_AVAILABLE_CallingPidgeon
 #define COCOAPODS_VERSION_MAJOR_CallingPidgeon 0
-#define COCOAPODS_VERSION_MINOR_CallingPidgeon 1
-#define COCOAPODS_VERSION_PATCH_CallingPidgeon 0
+#define COCOAPODS_VERSION_MINOR_CallingPidgeon 0
+#define COCOAPODS_VERSION_PATCH_CallingPidgeon 1
 
