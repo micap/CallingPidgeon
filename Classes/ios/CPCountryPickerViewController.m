@@ -38,7 +38,7 @@ static NSString *const kCellIdentifier = @"CountryCell";
     [super viewDidLoad];
     
     [self setDefaultTitle];
-    self.sectionHeader = [self.countries allKeys];
+    self.sectionHeader = [self.countries.allKeys sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 }
@@ -77,6 +77,12 @@ static NSString *const kCellIdentifier = @"CountryCell";
     cell.textLabel.text = self.countries[key][indexPath.row];
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+    return [self.sectionHeader objectAtIndex:section];
 }
 
 @end
