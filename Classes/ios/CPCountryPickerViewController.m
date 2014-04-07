@@ -14,7 +14,7 @@ static NSString *const kCellIdentifier = @"CountryCell";
 
 @interface CPCountryPickerViewController ()
 @property (nonatomic, strong) NSDictionary *countries;
-@property (nonatomic, strong) NSArray *sectionHeader;
+@property (nonatomic, strong) NSArray *sectionHeaders;
 @end
 
 @implementation CPCountryPickerViewController
@@ -38,7 +38,7 @@ static NSString *const kCellIdentifier = @"CountryCell";
     [super viewDidLoad];
     
     [self setDefaultTitle];
-    self.sectionHeader = [self.countries.allKeys sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
+    self.sectionHeaders = [self.countries.allKeys sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 }
@@ -59,12 +59,12 @@ static NSString *const kCellIdentifier = @"CountryCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.sectionHeader.count;
+    return self.sectionHeaders.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *key = [self.sectionHeader objectAtIndex:section];
+    NSString *key = self.sectionHeaders[section];
     return [self.countries[key] count];
 }
 
@@ -72,17 +72,14 @@ static NSString *const kCellIdentifier = @"CountryCell";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     
-    NSString *key = [self.sectionHeader objectAtIndex:indexPath.section];
+    NSString *key = self.sectionHeaders[indexPath.section];
     
     cell.textLabel.text = self.countries[key][indexPath.row];
     
     return cell;
 }
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    
-    return [self.sectionHeader objectAtIndex:section];
+    return self.sectionHeaders[section];
 }
-
 @end
