@@ -82,4 +82,8 @@ static NSString *const kCellIdentifier = @"CountryCell";
 {
     return self.sectionHeaders[section];
 }
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return self.sectionHeaders;
+}
 @end

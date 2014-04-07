@@ -40,7 +40,7 @@ describe(@"CPCountryPickerViewController displays a list countries to pick from"
     context(@"CPCountryPickerViewController as a tableView datasource", ^{
         __block CPCountryPickerViewController *viewController;
         beforeEach(^{
-            viewController = [[CPCountryPickerViewController alloc] initWithCountryCodeList:@[@"Bahamas", @"Australia", @"Angola"]];
+            viewController = [[CPCountryPickerViewController alloc] initWithCountryCodeList:@[@"Australia", @"Angola", @"Bahamas"]];
         });
         
         it(@"number of sections is equal to the number grouping for the country list", ^{
@@ -58,6 +58,9 @@ describe(@"CPCountryPickerViewController displays a list countries to pick from"
         it(@"provides the section header that is the first letter of the countries in that section", ^{
             [[[viewController tableView:viewController.tableView titleForHeaderInSection:0] should] equal:@"A"];
             [[[viewController tableView:viewController.tableView titleForHeaderInSection:1] should] equal:@"B"];
+        });
+        it(@"displays an index for the sections", ^{
+            [[[viewController sectionIndexTitlesForTableView:viewController.tableView] should] equal:@[@"A",@"B"]];
         });
     });
 });
