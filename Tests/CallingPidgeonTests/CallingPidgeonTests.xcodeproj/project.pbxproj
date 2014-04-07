@@ -216,6 +216,7 @@
 		F55A4F4618E5946D0092EB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -223,6 +224,7 @@
 		F55A4F4718E5946D0092EB6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
