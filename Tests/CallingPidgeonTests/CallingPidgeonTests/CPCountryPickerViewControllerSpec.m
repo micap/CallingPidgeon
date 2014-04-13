@@ -62,6 +62,12 @@ describe(@"CPCountryPickerViewController displays a list countries to pick from"
         it(@"displays an index for the sections", ^{
             [[[viewController sectionIndexTitlesForTableView:viewController.tableView] should] equal:@[@"A",@"B"]];
         });
+
+        it(@"returns the correct section when the user taps on the section index", ^{
+            [[theValue([viewController tableView:viewController.tableView sectionForSectionIndexTitle:@"A" atIndex:0]) should] equal:@(0)];
+        });
     });
+
 });
+
 SPEC_END
