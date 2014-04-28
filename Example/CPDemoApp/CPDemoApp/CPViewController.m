@@ -9,7 +9,8 @@
 #import "CPViewController.h"
 #import <CallingPidgeon/CPCountryPickerViewController.h>
 
-@interface CPViewController ()
+@interface CPViewController () <CPCountryPickerViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *selectedLabel;
 
 @end
 
@@ -30,6 +31,14 @@
 - (IBAction)buttonTapped:(id)sender
 {
     CPCountryPickerViewController *countryPickerViewController = [CPCountryPickerViewController new];
+    countryPickerViewController.delegate = self;
     [self.navigationController pushViewController:countryPickerViewController animated:YES];
+}
+
+#pragma mark - CPCountryPickerViewControllerDelegate
+- (void)countryPickerViewController:(CPCountryPickerViewController*)cpViewController didSelectCountry:(NSString *)selectedCountry
+{
+    self.selectedLabel.text = cpViewController.selectedCountry;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
