@@ -16,6 +16,32 @@
 
 SPEC_BEGIN(CPCountryPickerViewControllerSpec)
 
+describe(@"CPCountryPickerViewController has a selected country", ^{
+    
+    __block CPCountryPickerViewController *viewController;
+    __block NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    beforeEach(^{
+        NSBundle *testBundle = [NSBundle bundleForClass:self];
+        [NSBundle stub:@selector(mainBundle) andReturn:testBundle];
+        viewController = [[CPCountryPickerViewController alloc] initWithCountryCodeList:@[@"Australia", @"Angola", @"Bahamas"]];
+
+    });
+
+    it(@"selectedCountry is set when the user taps on its row", ^{
+        [viewController tableView:viewController.tableView didSelectRowAtIndexPath:selectedIndexPath];
+        [[viewController.selectedCountry should] equal:@"Australia"];
+    });
+    
+    it(@"calls the delegate -didSelectCountry: method", ^{
+        id delegate = [KWMock mockWithName:@"CPCountryPickerViewControllerDelegate" forProtocol:@protocol(CPCountryPickerViewControllerDelegate)];
+        viewController.delegate = delegate;
+
+        [[delegate should] receive:@selector(countryPickerViewController:didSelectCountry:) withArguments:viewController, @"Australia"];
+        [viewController tableView:viewController.tableView didSelectRowAtIndexPath:selectedIndexPath];
+    });
+});
+
+
 describe(@"CPCountryPickerViewController displays a list countries to pick from", ^{
     beforeEach(^{
         NSBundle *testBundle = [NSBundle bundleForClass:self];

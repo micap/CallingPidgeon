@@ -78,16 +78,31 @@ static NSString *const kCellIdentifier = @"CountryCell";
     
     return cell;
 }
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return self.sectionHeaders[section];
 }
+
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     return self.sectionHeaders;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     return index;
+}
+
+#pragma mark - TableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *key = [self.sectionHeaders objectAtIndex:indexPath.section];
+    self.selectedCountry = self.countries[key][indexPath.row];
+                                               
+    if ([self.delegate respondsToSelector:@selector(countryPickerViewController:didSelectCountry:)])
+    {
+        [self.delegate performSelector:@selector(countryPickerViewController:didSelectCountry:) withObject:self withObject:self.selectedCountry];
+    }
 }
 @end
