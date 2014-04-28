@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  CallingPidgeon: 21115caf9f364136ddbe1c933e92a8ff7ae438c9
+  CallingPidgeon: d02b758fe9650a366b33d4ecd2f490d447fb6516
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1
