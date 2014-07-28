@@ -41,6 +41,12 @@ static NSString *const kCellIdentifier = @"CountryCell";
     self.sectionHeaders = [self.countries.allKeys sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(styleViews)
+		   name:UIContentSizeCategoryDidChangeNotification
+     object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +59,16 @@ static NSString *const kCellIdentifier = @"CountryCell";
 {
     if (!self.title){
         self.title = @"Select a country";
+        [self styleViews];
     }
 }
+
+- (void)styleViews
+{
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]};
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -75,7 +89,7 @@ static NSString *const kCellIdentifier = @"CountryCell";
     NSString *key = self.sectionHeaders[indexPath.section];
     
     cell.textLabel.text = self.countries[key][indexPath.row];
-    
+
     return cell;
 }
 

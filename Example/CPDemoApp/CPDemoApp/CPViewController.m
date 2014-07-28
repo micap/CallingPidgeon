@@ -11,6 +11,7 @@
 
 @interface CPViewController () <CPCountryPickerViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *selectedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *countryPickerButton;
 
 @end
 
@@ -19,13 +20,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(styleViews)
+		   name:UIContentSizeCategoryDidChangeNotification
+     object:nil];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+    [self styleViews];
+}
+- (void)styleViews
+{
+    self.selectedLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    NSAttributedString *attributedButtonTitle = [[NSAttributedString alloc] initWithString:@"Select country" attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+    [self.countryPickerButton setAttributedTitle:attributedButtonTitle forState:UIControlStateNormal];
 }
 
 - (IBAction)buttonTapped:(id)sender
