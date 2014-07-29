@@ -38,6 +38,12 @@
     self.selectedLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     NSAttributedString *attributedButtonTitle = [[NSAttributedString alloc] initWithString:@"Select country" attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
     [self.countryPickerButton setAttributedTitle:attributedButtonTitle forState:UIControlStateNormal];
+    
+    UIBarButtonItem *dynamicTypeButton = [[UIBarButtonItem alloc] init];
+    [dynamicTypeButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]} forState:UIControlStateNormal];
+    self.navigationItem.backBarButtonItem = dynamicTypeButton;
+    
+    
 }
 
 - (IBAction)buttonTapped:(id)sender
